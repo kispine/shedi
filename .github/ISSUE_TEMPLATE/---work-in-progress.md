@@ -1,9 +1,9 @@
 ---
 name: "⚙️ Work in Progress"
 about: Задачи по текущему этапу разработки
-title: ''
-labels: ''
-assignees: ''
+title: "[WiP]"
+labels: WiP
+assignees: kispine
 
 ---
 
