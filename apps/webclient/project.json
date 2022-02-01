@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/next:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "root": "apps/webclient",
@@ -38,7 +40,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/webclient"],
+      "outputs": [
+        "coverage/apps/webclient"
+      ],
       "options": {
         "jestConfig": "apps/webclient/jest.config.js",
         "passWithNoTests": true
@@ -46,9 +50,13 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/webclient/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "apps/webclient/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     }
   },
