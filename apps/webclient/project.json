@@ -19,7 +19,9 @@
       "executor": "@nrwl/next:server",
       "options": {
         "buildTarget": "webclient:build",
-        "dev": true
+        "dev": true,
+        "port": 12000,
+        "proxyConfig": "apps/api/proxy.conf.json"
       },
       "configurations": {
         "production": {
@@ -51,6 +53,7 @@
     }
   },
   "tags": [
-    "scope:webclient"
+    "scope:webclient",
+    "type:app"
   ]
 }
