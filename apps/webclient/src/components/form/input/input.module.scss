@@ -1,0 +1,19 @@
+@import "../../../styles/utils";
+
+.root {
+  font-size: 1.125rem;
+  line-height: 130%;
+  box-sizing: border-box;
+  width: 100%;
+
+  padding: .5em;
+
+  color: $font-color-main;
+  border: none;
+  background: none;
+
+  &::placeholder {
+    font-size: 1rem;
+    color: $font-color-light;
+  }
+}

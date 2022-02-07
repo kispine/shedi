@@ -1,0 +1,54 @@
+@import "apps/webclient/src/styles/utils";
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  padding: 0 2rem;
+}
+
+.logoTop {
+  margin: 2rem 0;
+
+  & > img, svg {
+    width: 7rem;
+  }
+}
+
+@include large {
+  .container {
+    width: 25%;
+  }
+}
+
+@include desktops {
+  .container {
+    width: 50%;
+  }
+}
+
+@include laptops {
+  .container {
+    width: 65%;
+  }
+}
+
+@include tablets {
+  .container {
+    width: 80%;
+  }
+}
+
+@include phones {
+  .container {
+    width: 100%;
+  }
+}
