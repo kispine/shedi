@@ -10,8 +10,9 @@ export const environment = {
     dropSchema: false,
     synchronize: true,
     logging: true,
+    autoLoadEntities: true,
     entities: [
-      'dist/app/api/src/**/*.entity[.ts, .js]'
+      'dist/app/api/src/**/**/**/*.entity[.ts, .js]'
     ],
     migrations: [
       'dist/app/api/migrations/*[.ts, .js]'
