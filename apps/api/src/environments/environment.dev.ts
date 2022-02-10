@@ -1,6 +1,9 @@
-export const environment = {
+import { IEnvironment } from './index'
+
+export const environmentDev: IEnvironment = {
   production: false,
-  connection: {
+
+  db: {
     type: process.env.DB_TYPE as 'aurora-data-api',
     host: process.env.DB_HOST,
     port: +process.env.DB_PORT,
@@ -20,5 +23,23 @@ export const environment = {
     cli: {
       'migrationsDir': 'db/migrations'
     },
+  },
+
+  redis: {
+    host: process.env.REDIS_HOST,
+    port: +process.env.REDIS_PORT,
+    password: process.env.REDIS_PASSWORD,
+  },
+
+  smtp: {
+    host: process.env.SMTP_HOST,
+    port: +process.env.SMTP_PORT,
+    secure: process.env.SMTP_SECURE == '1',
+    username: process.env.SMTP_USERNAME,
+    password: process.env.SMTP_PASSWORD,
+    from: {
+      name: process.env.SMTP_FROM_NAME,
+      address: process.env.SMTP_FROM_ADDRESS,
+    }
   }
 }

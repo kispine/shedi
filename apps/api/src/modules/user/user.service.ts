@@ -12,12 +12,12 @@ export class UserService {
   ) {
   }
 
-  async findById(id: number): Promise<User> {
-    return this.usersRepository.findOne(id)
-  }
-
   async findAll(): Promise<User[]> {
     return this.usersRepository.find()
+  }
+
+  async findById(id: number): Promise<User> {
+    return this.usersRepository.findOne(id)
   }
 
   async updateById(id: number, data: TUserUpdateDto): Promise<User> {

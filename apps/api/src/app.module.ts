@@ -1,14 +1,17 @@
 import { Module } from '@nestjs/common'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { GqlModuleAsyncOptions, GqlModuleOptions, GraphQLModule } from '@nestjs/graphql'
-import { environment } from './environments/environment'
+import environment from './environments'
 import { UserModule } from './modules/user/user.module'
+import { BullModule } from '@nestjs/bull'
+import { MailSenderModule } from './modules/mail-sender/mail-sender.module'
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      ...environment.connection,
+      ...environment.db,
     }),
+
     GraphQLModule.forRootAsync({
       useFactory: () => {
         const schemaModuleOptions: Partial<GqlModuleOptions> = {}
@@ -29,9 +32,15 @@ import { UserModule } from './modules/user/user.module'
       }
     } as GqlModuleAsyncOptions),
 
+    BullModule.forRoot({
+      redis: {
+        ...environment.redis
+      }
+    }),
+
+    MailSenderModule,
     UserModule,
   ],
   exports: []
 })
-export class AppModule {
-}
+export class AppModule {}

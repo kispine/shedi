@@ -6,7 +6,7 @@ import { TUserUpdateDto } from './dtos/user-update.dto'
 @Controller('/user')
 export class UserController {
   constructor(
-    private usersService: UserService
+    private usersService: UserService,
   ) {
   }
 
